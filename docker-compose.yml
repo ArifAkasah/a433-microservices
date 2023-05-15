@@ -1,0 +1,19 @@
+services: # mendefinisikan layanan yang akan dibangun
+  item-app: # nama layanan pertama
+    image: arifakasah/item-app:v1 # menggunakan image "arifakasah/item-app:v1"
+    ports: # mendefinisikan port yang akan digunakan
+      - "80:8080" # memetakan port 80 pada host ke port 8080 di dalam kontainer
+    restart: always # layanan selalu di-restart jika berhenti
+    depends_on: # mendefinisikan layanan yang harus dijalankan terlebih dahulu sebelum layanan ini dijalankan
+      - item-db # layanan item-db harus dijalankan terlebih dahulu
+    volumes: # mengikat direktori lokal ke direktori di dalam kontainer
+      - C:\Users\dhafa\Documents\microservices_proyekPertama\a433-microservices\logs:/app/logs # mengikat direktori lokal ke direktori logs di dalam kontainer
+
+  item-db: # nama layanan kedua
+    image: mongo:3 # menggunakan image "mongo:3"
+    volumes: # mendefinisikan volume yang akan digunakan
+      - app-db:/data/db # volume "app-db" di-mount ke direktori /data/db di dalam kontainer
+    restart: always # layanan selalu di-restart jika berhenti
+
+volumes: # mendefinisikan volume yang akan dibuat
+  app-db: # nama volume yang dibuat
