@@ -1,6 +1,6 @@
 services: # mendefinisikan layanan yang akan dibangun
   item-app: # nama layanan pertama
-    image: arifakasah/item-app:v1 # menggunakan image "arifakasah/item-app:v1"
+    image: ghcr.io/arifakasah/item-app:v1 # mengambil dan menggunakan image yang tersedia di GitHub Container Registry untuk menjalankan container di lingkungan Docker"
     ports: # mendefinisikan port yang akan digunakan
       - "80:8080" # memetakan port 80 pada host ke port 8080 di dalam kontainer
     restart: always # layanan selalu di-restart jika berhenti
