@@ -1,1 +1,1 @@
-https://hub.docker.com/repository/docker/arifakasah/item-app/general
+https://github.com/users/ArifAkasah/packages/container/package/item-app%2Fitem-app
